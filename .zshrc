@@ -117,7 +117,23 @@ alias ls='eza --icons=auto --group-directories-first'
 alias ll='eza -lh --icons=auto --group-directories-first --git --time-style=long-iso --octal-permissions'
 alias la='eza -lah --icons=auto --group-directories-first --git --time-style=long-iso --octal-permissions'
 alias lt='eza --tree --level=2 --icons=auto --group-directories-first'
+alias lenv='loadenv'
 
+# Custom functions
+
+# Automatically load and export a specified env file, defaulting to .env.
+loadenv() {
+  local env_file="${1:-.env}"
+
+  if [ -f "$env_file" ]; then
+    set -a
+    source "$env_file"
+    set + a
+    echo "Loaded environment variables from $env_file"
+  else
+    echo "File not found: $env_file"
+  fi
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
