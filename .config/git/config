@@ -1,6 +1,6 @@
 [user]
 	name = iyad-f
-	email = 128908811+iyad-f@users.noreply.github.com
+	email = dev@iyadzargar.com
 
 [init]
 	defaultBranch = main
@@ -16,9 +16,6 @@
 
 [log]
   date = iso
-
-[includeIf "hasconfig:remote.*.url:*gitlab.com/**"]
-  path = ~/.config/git/config.gitlab
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
