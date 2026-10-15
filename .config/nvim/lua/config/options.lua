@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.guicursor = "n-v-c-i:block"
+vim.g.lazyvim_python_lsp = "basedpyright"
